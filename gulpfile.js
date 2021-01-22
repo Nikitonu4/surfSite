@@ -9,6 +9,7 @@ del = require('del');
 function scripts(){ // работа с js файлами
     return src([
         'node_modules/jquery/dist/jquery.js', //выбираем jquery библиотеку
+        'node_modules/slick-carousel/slick/slick.js',
         'app/js/main.js' // выбираем основной файл main.js
   ])
   .pipe(concat('main.min.js')) // переименовывем файл в min.js
@@ -25,10 +26,17 @@ function browsersync(){ // обновление браузера
   })
 }
 
-function styles(){ // конвернтирует из scss в css
-  return src('app/scss/style.scss')
-    .pipe(scss({outputStyle: 'compressed'}))
+// function styleLibs(){
+//   return src(['node_modules/slick-carousel/slick/slick.css'])
+//   .pipe(concat('_libs.scss'))
+//   .pipe(dest('app/scss'))
+//   .pipe(browserSync.stream())
+// }
+
+function styles(){ // конвертирует из scss в css
+  return src(['app/scss/_nullstyle.scss','node_modules/slick-carousel/slick/slick.css', 'app/scss/style.scss'])
     .pipe(concat('style.min.css'))
+    .pipe(scss({outputStyle: 'compressed'}))
     .pipe(autopefixer({ // добавление префикса 
       overrideBrowserlist: ['last 10 version'],
       grid: true

@@ -1,0 +1,51 @@
+@import "global";
+
+$color1: #fff;
+$color2: #4af6cd;
+
+.header {
+  &__slider {
+  }
+
+  &__slider-item {
+  }
+}
+
+.slider-item {
+  height: 100vh;
+  background: url(../img/header-bg.jpg) 0 0 / cover no-repeat;
+  position: relative;
+  &__info {
+    position: absolute;
+    right: 80px;
+    bottom: 116px;
+    text-align: right;
+    color: $color1;
+    text-transform: uppercase;
+  }
+
+  &__info-subtitle {
+    margin-bottom: 5px;
+  }
+
+  &__info-title {
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 86px;
+    margin-bottom: 48px;
+  }
+
+  &__info-subtext {
+    margin-bottom: 8px;
+  }
+
+  &__info-text {
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  &__info-link {
+  }
+}
